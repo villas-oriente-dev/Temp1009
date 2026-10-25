@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "id": "/",
+  "name": "QR SOS Médico - Rescate y Emergencias",
+  "short_name": "SOS Médico",
+  "description": "Ficha médica de emergencia, llamada directa en 1 clic a familiares ICE, modo 100% offline y generador de códigos QR para casco y cartera.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "lang": "es",
+  "dir": "ltr",
+  "theme_color": "#dc2626",
+  "background_color": "#0f172a",
+  "categories": ["medical", "health", "utilities"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "540x960",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Ficha Médica de Emergencia y Contactos ICE"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "960x540",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Generador de QR y Fichas de Rescate"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ficha Médica SOS",
+      "short_name": "Ficha SOS",
+      "description": "Ver datos médicos de emergencia y contactos ICE",
+      "url": "/#emergency",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Generar QR Casco/Moto",
+      "short_name": "Generar QR",
+      "description": "Generar código QR y pegatinas de auxilio",
+      "url": "/#qr",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "related_applications": []
+}

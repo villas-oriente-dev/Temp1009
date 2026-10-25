@@ -296,28 +296,28 @@ export default function App() {
         setIsDeviceFrame={setIsDeviceFrame}
       />
 
-      {/* Android SDK Native Callout Bar */}
-      <div className="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 border-b border-emerald-500/30 text-white px-4 py-2 text-xs flex flex-wrap items-center justify-between gap-2 shadow-inner">
+      {/* Android SDK Native & Debug APK Workflow Callout Bar */}
+      <div className="bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 border-b border-purple-500/40 text-white px-4 py-2.5 text-xs flex flex-wrap items-center justify-between gap-2 shadow-inner">
         <div className="flex items-center gap-2">
-          <Smartphone className="w-4 h-4 text-emerald-400 shrink-0" />
+          <Smartphone className="w-4 h-4 text-purple-400 shrink-0" />
           <span className="text-slate-300 font-medium">
-            <strong className="text-emerald-300 font-bold">SDK Oficial de Android (Kotlin 2.0 & Jetpack Compose):</strong> Cero PWA. Código fuente nativo para compilar en Android Studio con CameraX y Room Database.
+            <strong className="text-purple-300 font-bold">Workflow APK Debug Listo:</strong> Archivo <code className="text-amber-300 font-mono">.github/workflows/build-apk.yml</code> incluido para compilar con <code className="text-emerald-300 font-mono">./gradlew assembleDebug</code> y descargar tu <code className="text-white font-mono font-bold">app-debug.apk</code> en GitHub Actions.
           </span>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => handleTabChange('androidSdk')}
-            className="px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 border border-emerald-500/40 font-bold text-[11px] cursor-pointer flex items-center gap-1.5 transition-colors"
+            className="px-2.5 py-1 rounded-lg bg-purple-600/40 hover:bg-purple-600/60 text-purple-200 border border-purple-400/50 font-bold text-[11px] cursor-pointer flex items-center gap-1.5 transition-colors shadow-xs"
           >
-            <FileCode className="w-3.5 h-3.5 text-emerald-300" />
-            <span>Ver Archivos Kotlin</span>
+            <FileCode className="w-3.5 h-3.5 text-purple-300" />
+            <span>Ver Workflow & Código Kotlin</span>
           </button>
           <button
             onClick={() => setIsAndroidInstallOpen(true)}
-            className="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-[11px] cursor-pointer shadow-sm transition-all active:scale-95 shrink-0 flex items-center gap-1"
+            className="px-3 py-1 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-[11px] cursor-pointer shadow-sm transition-all active:scale-95 shrink-0 flex items-center gap-1"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Descargar Proyecto .ZIP</span>
+            <span>Compilar / Descargar .ZIP</span>
           </button>
         </div>
       </div>

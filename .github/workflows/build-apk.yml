@@ -1,0 +1,41 @@
+name: Compilar APK Android Debug
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-debug-apk:
+    name: Compilar app-debug.apk
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar / Descargar Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Entorno Java 17 (JDK)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Dar Permisos de Ejecución a Gradle Wrapper
+        run: chmod +x ./gradlew || true
+
+      - name: Compilar APK en Versión Debug con Gradle
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
+
+      - name: Verificar que el archivo APK Debug fue generado
+        run: |
+          ls -lh app/build/outputs/apk/debug/ || true
+
+      - name: Subir APK Debug como Artefacto Descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SOSMedico-app-debug
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 14

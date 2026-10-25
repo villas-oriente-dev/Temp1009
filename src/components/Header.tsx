@@ -11,7 +11,8 @@ import {
   Download, 
   Camera, 
   FileCode,
-  Laptop
+  Laptop,
+  Github
 } from 'lucide-react';
 import { isAlarmRunning, startSOSAlarm, stopSOSAlarm } from '../utils/audioAlert';
 
@@ -70,10 +71,19 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={onOpenAndroidInstall}
-            className="flex items-center gap-1 font-black text-emerald-200 bg-emerald-950/80 hover:bg-emerald-900 px-2 py-0.5 rounded cursor-pointer transition-colors border border-emerald-500/40"
+            className="flex items-center gap-1 font-black text-purple-200 bg-purple-950/90 hover:bg-purple-900 px-2 py-0.5 rounded cursor-pointer transition-colors border border-purple-400/50 shadow-sm"
+            title="Ver y ejecutar Workflow de GitHub Actions para compilar el APK Debug"
+          >
+            <Github className="w-3.5 h-3.5 text-purple-300" />
+            <span>Workflow APK Debug</span>
+          </button>
+
+          <button
+            onClick={onOpenAndroidInstall}
+            className="hidden lg:flex items-center gap-1 font-black text-emerald-200 bg-emerald-950/80 hover:bg-emerald-900 px-2 py-0.5 rounded cursor-pointer transition-colors border border-emerald-500/40"
           >
             <Download className="w-3.5 h-3.5 text-emerald-300" />
-            <span>Código Android Studio</span>
+            <span>Proyecto .ZIP</span>
           </button>
           
           <button
@@ -184,12 +194,12 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setCurrentTab('androidSdk')}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 currentTab === 'androidSdk'
-                  ? 'bg-emerald-600 text-white shadow-md shadow-emerald-900/40'
-                  : 'bg-emerald-950/40 text-emerald-300 hover:bg-emerald-900/60 border border-emerald-500/40'
+                  ? 'bg-purple-600 text-white shadow-md shadow-purple-900/40 ring-1 ring-purple-300'
+                  : 'bg-purple-950/40 text-purple-300 hover:bg-purple-900/60 border border-purple-500/40'
               }`}
             >
-              <FileCode className="w-4 h-4 text-emerald-400" />
-              <span>Código Kotlin SDK</span>
+              <Github className="w-4 h-4 text-purple-300" />
+              <span>Workflow APK & SDK</span>
             </button>
           </nav>
         </div>

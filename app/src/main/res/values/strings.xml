@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">QR SOS Médico</string>
+    <string name="tile_sos_label">SOS Médico</string>
+    <string name="widget_title">Ficha de Emergencia</string>
+</resources>

@@ -21,13 +21,17 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
+
+      - name: Configurar Gradle 8.7 Oficial
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.7'
 
       - name: Dar Permisos de Ejecución a Gradle Wrapper
         run: chmod +x ./gradlew || true
 
-      - name: Compilar APK en Versión Debug con Gradle
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+      - name: Compilar APK en Versión Debug
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Verificar que el archivo APK Debug fue generado
         run: |
